@@ -141,7 +141,7 @@ const Form = () => {
   return (
  
     <div>
-    <h1>Select Branch, Semester, and Subject</h1>
+  
     <div>
       <label>Name: </label>
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
