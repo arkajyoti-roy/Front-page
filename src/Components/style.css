@@ -1,15 +1,28 @@
-.details{
+/* .fom{
     width: 100%;
    justify-content: center;
    text-align: center; 
 }
-.details img{
+.fom img{
     width: 150px;
 }
-.details h2{
+.fom h2{
     text-decoration: underline;
 }
 #jus label{
 /* font-size: medium; */
-color: brown !important;
+/* color: brown !important; */
+/* } */
+
+
+.fom input, .fom select, .fom button{
+border: 1px solid black;
+display: flex;
+gap: 25px;
+margin-left: 500px;
+}
+
+.fom label{
+margin-left: 500px;
+
 }
