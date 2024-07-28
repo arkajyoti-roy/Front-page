@@ -9,3 +9,7 @@
 .details h2{
     text-decoration: underline;
 }
+#jus label{
+/* font-size: medium; */
+color: brown !important;
+}

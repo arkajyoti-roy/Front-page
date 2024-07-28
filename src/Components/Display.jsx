@@ -6,9 +6,8 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import './style.css'
 const Display = () => {
-    const location = useLocation();
-    const { name, branch, roll, sub, sem } = location.state || {};
-
+  const location = useLocation();
+  const { name, rollNumber, selectedBranch, selectedSemester, selectedSubject } = location.state;
 
     const pdfRef = useRef();
 
@@ -41,15 +40,16 @@ const Display = () => {
 
 <img src="./lo.png" alt="" />
 
-<h2>DIPLOMA IN {branch}</h2>
+<h2>DIPLOMA IN {selectedBranch}</h2>
 
 <hr />
 <h3>Assignment</h3>
-<h3>{sub}</h3>
+<h3>{selectedSubject}</h3>
+     
 <p>SUBMITED BY</p>
 <h2><b>{name}</b></h2>
-<p>({roll})</p>
-<p>{sem} Semester Diploma in Engineering</p>
+<p>({rollNumber})</p>
+<p>{selectedSemester} Semester Diploma in Engineering</p>
 <hr />
 
 <p>COMPUTER SCIENCE & TECHNOLOGY DEPARTMENT</p>
