@@ -1,0 +1,11 @@
+.details{
+    width: 100%;
+   justify-content: center;
+   text-align: center; 
+}
+.details img{
+    width: 150px;
+}
+.details h2{
+    text-decoration: underline;
+}
