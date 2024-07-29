@@ -167,10 +167,12 @@ const Form = () => {
           className="h-8 w-64 rounded-md px-2"
         />
       </div>
-<br />
+      <br />
       <div>
         <label className="mt-8 font-bold">Branch: </label>
-        <select value={selectedBranch} onChange={handleBranchChange}
+        <select
+          value={selectedBranch}
+          onChange={handleBranchChange}
           className="h-8 w-64 rounded-md px-2"
         >
           <option value="">Select Branch</option>
@@ -181,7 +183,7 @@ const Form = () => {
           ))}
         </select>
       </div>
-<br />
+      <br />
       <div>
         <label className="mt-8 font-bold">Semester: </label>
         <select
@@ -198,7 +200,7 @@ const Form = () => {
           ))}
         </select>
       </div>
-<br />
+      <br />
       <div>
         <label className="mt-8 font-bold">Subject: </label>
         <select
@@ -215,15 +217,19 @@ const Form = () => {
           ))}
         </select>
       </div>
-<br />
-      <br /><br /><br />
+      <br />
+      <br />
+      <br />
+      <br />
 
       {/* <button onClick={handleSubmit}>Submit</button> */}
-      <button type="submit" onClick={handleSubmit} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-64 sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-
-
-
-
+      <button
+        type="submit"
+        onClick={handleSubmit}
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-64 sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Submit
+      </button>
     </div>
   );
 };
