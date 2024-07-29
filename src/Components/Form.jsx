@@ -147,7 +147,7 @@ const Form = () => {
 
   return (
     <div className="fom mt-32 mb-8">
-      <h1>Enter Your Details </h1>
+      {/* <h1>Enter Your Details </h1> */}
       <div>
         <label className="mt-8 font-bold">Name: </label>
         <input
