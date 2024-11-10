@@ -36,7 +36,7 @@ const Display = () => {
             <p><strong>Roll no.:</strong> {roll}</p>
             <p><strong>Subject:</strong> {sub}</p>
             <p><strong>Semester:</strong> {sem}</p> */}
-        <h1 style={{ fontSize: '30px', fontWeight: '700' }}>GOMATI DISTRICT POLYTECHNIC</h1>
+        <h1 style={{ fontSize: '30px', fontWeight: '700' }}>TECHNO COLLEGE OF ENGINEERING</h1>
         <br />
         <br />
         <br />
