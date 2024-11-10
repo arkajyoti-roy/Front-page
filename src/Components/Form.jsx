@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 const Form = () => {
   const [name, setName] = useState("");
+  const [studentID, setstudentID] = useState("");
+  const [selectedSubjectCode, setselectedSubjectCode] = useState("");
+  const [session, setsession] = useState("");
   const [rollNumber, setRollNumber] = useState("");
   const [selectedBranch, setSelectedBranch] = useState("");
   const [selectedSemester, setSelectedSemester] = useState("");
@@ -137,10 +140,13 @@ const Form = () => {
     navigate("/display", {
       state: {
         name,
-        rollNumber,
         selectedBranch,
+        studentID,
         selectedSemester,
+        rollNumber,
+        selectedSubjectCode,
         selectedSubject,
+        session,
       },
     });
   };
@@ -157,17 +163,7 @@ const Form = () => {
           className="h-8 w-64 rounded-md px-2"
         />
       </div>
-      <br />
-      <div>
-        <label className="mt-8 font-bold">Roll Number: </label>
-        <input
-          type="text"
-          value={rollNumber}
-          onChange={(e) => setRollNumber(e.target.value)}
-          className="h-8 w-64 rounded-md px-2"
-        />
-      </div>
-      <br />
+      
       <div>
         <label className="mt-8 font-bold">Branch: </label>
         <select
@@ -183,7 +179,20 @@ const Form = () => {
           ))}
         </select>
       </div>
+
+
+      <div>
+        <label className="mt-8 font-bold">Student ID: </label>
+        <input
+          type="text"
+          value={studentID}
+          onChange={(e) => setstudentID(e.target.value)}
+          className="h-8 w-64 rounded-md px-2"
+        />
+      </div>
       <br />
+
+
       <div>
         <label className="mt-8 font-bold">Semester: </label>
         <select
@@ -200,6 +209,19 @@ const Form = () => {
           ))}
         </select>
       </div>
+      <div>
+        <label className="mt-8 font-bold">Roll Number: </label>
+        <input
+          type="text"
+          value={rollNumber}
+          onChange={(e) => setRollNumber(e.target.value)}
+          className="h-8 w-64 rounded-md px-2"
+        />
+      </div>
+      <br />
+  
+      <br />
+   
       <br />
       <div>
         <label className="mt-8 font-bold">Subject: </label>
@@ -218,7 +240,26 @@ const Form = () => {
         </select>
       </div>
       <br />
+
+      <div>
+        <label className="mt-8 font-bold">Subject Code: </label>
+        <input
+          type="text"
+          value={selectedSubjectCode}
+          onChange={(e) => setselectedSubjectCode(e.target.value)}
+          className="h-8 w-64 rounded-md px-2"
+        />
+      </div>
       <br />
+      <div>
+        <label className="mt-8 font-bold">Session: </label>
+        <input
+          type="text"
+          value={session}
+          onChange={(e) => setsession(e.target.value)}
+          className="h-8 w-64 rounded-md px-2"
+        />
+      </div>
       <br />
       <br />
 
