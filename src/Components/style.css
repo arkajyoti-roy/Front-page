@@ -14,6 +14,12 @@
 /* color: brown !important; */
 /* } */
 
+.formimg {
+    margin-left: -6px;
+    margin-top: 1px;
+    max-width: 80% !important;
+    height: auto;
+}
 
 .fom input, .fom select, .fom button{
 border: 1px solid black;
