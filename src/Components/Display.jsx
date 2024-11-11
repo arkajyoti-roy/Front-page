@@ -30,7 +30,7 @@ const Display = () => {
 
   return (
     <div>
-      <div className='details' ref={pdfRef} style={{ marginLeft: '24%', marginTop: '4%', border: '1px solid black', width: '210mm', height: '297mm', textAlign: 'center', alignContent: 'center', alignItems: 'center', justifyContent: 'center' }}>
+      <div className='details' ref={pdfRef} style={{  marginTop: '4%', border: '1px solid black', width: '210mm', height: '297mm', textAlign: 'center', alignContent: 'center', alignItems: 'center', justifyContent: 'center' }}>
         {/* <p><strong>Name:</strong> {name}</p>
             <p><strong>Branch:</strong> {branch}</p>
             <p><strong>Roll no.:</strong> {roll}</p>
