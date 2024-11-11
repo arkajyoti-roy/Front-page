@@ -10,6 +10,8 @@ const Display = () => {
   const { name, rollNumber, selectedBranch, selectedSemester, selectedSubject } = location.state;
 
   const pdfRef = useRef();
+  const zoomLevel = 0.55; // 60%
+
 
   const handleDownloadPDF = () => {
     const input = pdfRef.current;
@@ -29,7 +31,9 @@ const Display = () => {
   };
 
   return (
-    <div>
+    <div     style={{ transform: `scale(${zoomLevel})`, transformOrigin: '0 0', width: `${100 / zoomLevel}%`, height: `${100 / zoomLevel}%`, overflow: 'hidden', }}
+>
+      {/* <div className='pdff'> */}
       <div className='details' ref={pdfRef} style={{  marginTop: '4%', border: '1px solid black', width: '210mm', height: '297mm', textAlign: 'center', alignContent: 'center', alignItems: 'center', justifyContent: 'center' }}>
         {/* <p><strong>Name:</strong> {name}</p>
             <p><strong>Branch:</strong> {branch}</p>
@@ -42,15 +46,16 @@ const Display = () => {
         <br />
         <img src="./lo.png" alt="" style={{ width: "200px", alignContent: 'center', marginLeft: '38%' }} />
         <br />
+        <p>MAHESHKHOLA, AGARTALA, TRIPURA</p>
         <br />
-        <h2>DIPLOMA IN {selectedBranch}</h2>
+        <h1><b>{selectedSubject}</b> {selectedBranch}</h1>
         <br />
-        <hr style={{ border: 'solid 0.1px black',margin:'50px' }}/>
+        <p>SUBMITED BY:</p>
+
         <br />
         <h3>Assignment</h3>
-        <h3>{selectedSubject}</h3>
+        <h3></h3>
         <br />
-        <p>SUBMITED BY</p>
         <h2><b>{name}</b></h2>
         <p>({rollNumber})</p>
         <br />
@@ -60,8 +65,8 @@ const Display = () => {
         <br />
         <p>COMPUTER SCIENCE & TECHNOLOGY DEPARTMENT</p>
         <h3><b>GOMATI DISTRICT POLYTECHNIC</b></h3>
-        <p>FULKUMARI, UDAIPUR, GOMATI TRIPURA - 799013, INDIA</p>
 
+      {/* </div> */}
       </div>
       <br /><br />
       <button className="btnn text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-64 sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={handleDownloadPDF}>Download PDF</button>
