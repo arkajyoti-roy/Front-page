@@ -36,30 +36,88 @@ const Display = () => {
     return () => window.removeEventListener("resize", checkDeviceType);
   }, []);
 
-  const handleDownloadPDF = () => {
-    const input = pdfRef.current;
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = imgWidth / imgHeight;
-      const height = pdfWidth / ratio;
+  // const handleDownloadPDF = () => {
+  //   const input = pdfRef.current;
+  //   html2canvas(input).then((canvas) => {
+  //     const imgData = canvas.toDataURL("image/pdf");
+  //     const pdf = new jsPDF("p", "mm", "a4");
+  //     const pdfWidth = pdf.internal.pageSize.getWidth();
+  //     const pdfHeight = pdf.internal.pageSize.getHeight();
+  //     const imgWidth = canvas.width;
+  //     const imgHeight = canvas.height;
+  //     const ratio = imgWidth / imgHeight;
+  //     const height = pdfWidth / ratio;
 
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, height);
-      pdf.save("download.pdf");
-    });
-  };
+  //     pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, height);
+  //     pdf.save("download.pdf");
+  //   });
+  // };
+
+
+  ///////////////////////////////////////////////////
+
+  // const handleDownloadPDF = () => {
+  //   const input = pdfRef.current;
+  
+  //   html2canvas(input, {
+  //     // Adjust these options as needed
+  //     // imageRendering: 'pixelated', // Or 'optimizeSpeed'
+  //     allowTaint: true,
+  //     useCORS: true,
+  //     logging: true, // Enable logging for debugging
+  //     scale: 5,
+  //     // scale: 0.8, // Reduce the size by 20%
+  // imageRendering: 'optimizeSpeed',
+  //   }).then((canvas) => {
+  //     const imgData = canvas.toDataURL('image/png');
+  //     const pdf = new jsPDF('p', 'mm', 'a4');
+  //     const pdfWidth = pdf.internal.pageSize.getWidth();
+  //     const pdfHeight = pdf.internal.pageSize.getHeight();
+  //     // const imgWidth = canvas.width;
+  //     // const imgHeight = canvas.height;
+  
+  //     // ... (rest of the code for calculating dimensions and adding image to PDF)
+  //     pdf.addImage(imgData, "PDF", 0, 0, pdfWidth, pdfHeight);
+  //     pdf.save('download.pdf');
+  //   });
+  // };
+
+////////////////////////////////////////////////////////////////////
+
+const handleDownloadPDF = () => {
+  const input = pdfRef.current;
+  
+  html2canvas(input, {
+    allowTaint: true,
+    useCORS: true,
+    logging: true,
+    scale: 3 // Ensure high-quality rendering
+  }).then((canvas) => {
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+
+    // Calculate aspect ratio to fit within PDF dimensions
+    const imgWidth = canvas.width;
+    const imgHeight = canvas.height;
+    const ratio = imgWidth / imgHeight;
+    const height = pdfWidth / ratio;
+
+    // Ensure we maintain aspect ratio and don't stretch the image
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, height > pdfHeight ? pdfHeight : height);
+    pdf.save('download.pdf');
+  });
+};
+
 
   return (
     <div
       style={{
         transform: `scale(${zoomLevel})`,
-        transformOrigin: "0 0",
-        width: `${100 / zoomLevel}%`,
-        height: `${100 / zoomLevel}%`,
+        transformOrigin: "0 1",
+        // width: `${100 / zoomLevel}%`,
+        // height: `${100 / zoomLevel}%`,
         overflow: "hidden",
       }}
     >
@@ -83,7 +141,7 @@ const Display = () => {
             <p><strong>Roll no.:</strong> {roll}</p>
             <p><strong>Subject:</strong> {sub}</p>
             <p><strong>Semester:</strong> {sem}</p> */}
-        <h1 style={{ fontSize: "30px", fontWeight: "700" }}>
+        <h1 style={{ fontSize: "28px", fontWeight: "700" }}>
           TECHNO COLLEGE OF ENGINEERING
         </h1>
         <br />
@@ -98,7 +156,7 @@ const Display = () => {
         <p>MAHESHKHOLA, AGARTALA, TRIPURA</p>
         <br />
         <h1>
-          <b>{selectedSubject}</b> {selectedBranch}
+          <b>{selectedSubject}</b> <br /><br />{selectedBranch}
         </h1>
         <br />
         <p>SUBMITED BY:</p>
@@ -112,13 +170,13 @@ const Display = () => {
         </h2>
         <p>({rollNumber})</p>
         <br />
-        <p>{selectedSemester} Semester Diploma in Engineering</p>
+        {/* <p>{selectedSemester} Semester Diploma in Engineering</p> */}
         <br />
         <hr style={{ border: "solid 0.1px black", margin: "50px" }} />
         <br />
         <p>COMPUTER SCIENCE & TECHNOLOGY DEPARTMENT</p>
         <h3>
-          <b>GOMATI DISTRICT POLYTECHNIC</b>
+          {/* <b>GOMATI DISTRICT POLYTECHNIC</b> */}
         </h3>
 
         {/* </div> */}

@@ -81,10 +81,26 @@
 
 @media (min-width: 300px) and (max-width: 768px) {
 
-.details{
+/* .details{
     margin-left: 30%;
-    /* margin-left: 27.4%; */
+} */
+
+.details {
+  margin-top: 4%;
+  border: 1px solid black;
+  width: 210mm;
+  height: 297mm;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  line-height: 1.8; /* Increased line-height for better spacing */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
+
+
+
 }
 .formimg {
   margin-left: -6px;
