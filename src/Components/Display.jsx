@@ -136,48 +136,50 @@ const handleDownloadPDF = () => {
           justifyContent: "center",
         }}
       >
-        {/* <p><strong>Name:</strong> {name}</p>
-            <p><strong>Branch:</strong> {branch}</p>
-            <p><strong>Roll no.:</strong> {roll}</p>
-            <p><strong>Subject:</strong> {sub}</p>
-            <p><strong>Semester:</strong> {sem}</p> */}
-        <h1 style={{ fontSize: "28px", fontWeight: "700" }}>
-          TECHNO COLLEGE OF ENGINEERING
+
+        <h3 style={{ fontSize: "22px", fontWeight: "700" ,fontFamily: "Times New Roman"}}>
+          Assignment
+        </h3>
+        <h1 style={{ fontSize: "30px", fontWeight: "700" ,fontFamily: "Times New Roman"}}>
+          Techno College of Engineering Agartala
         </h1>
+<br />
+        <span style={{fontFamily: "Times New Roman",fontSize: "16px",}}><b>Course Title:</b></span>
+        <span style={{fontFamily: "Times New Roman",fontSize: "16px",}}>&nbsp;Concrete Technology</span>
         <br />
+        <span style={{fontFamily: "Times New Roman",fontSize: "16px",}}><b>Course Code:</b></span>
+        <span style={{fontFamily: "Times New Roman",fontSize: "16px",}}>&nbsp;CEP117</span>
         <br />
         <br />
         <img
           src="./lo.png"
           alt=""
-          style={{ width: "200px", alignContent: "center", marginLeft: "38%" }}
+          style={{ width: "200px", alignContent: "center", marginLeft: "36%" }}
         />
         <br />
-        <p>MAHESHKHOLA, AGARTALA, TRIPURA</p>
-        <br />
-        <h1>
-          <b>{selectedSubject}</b> <br /><br />{selectedBranch}
-        </h1>
-        <br />
-        <p>SUBMITED BY:</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "underline"}}><b>Submitted to</b></p>
+        {/* <br /> */}
+        <p style={{fontFamily: "Times New Roman",fontSize: "15px", textDecoration: "none"}}><b>Dr. ABC ABC</b></p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "14px", textDecoration: "none"}}>Assistant Professor</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "14px", textDecoration: "none"}}>Department of Civil Engineering</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "14px", textDecoration: "none"}}>Techno College of Engineering Agartala</p>
 
         <br />
-        <h3>Assignment</h3>
-        <h3></h3>
+        {/* <br /> */}
+        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "underline"}}><b>Submitted by</b></p>
+        {/* <br /> */}
+        <p style={{fontFamily: "Times New Roman",fontSize: "15px", textDecoration: "none"}}><b>Sexy Sexy</b></p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "15px", textDecoration: "none"}}><b>Student ID:</b>&nbsp;12345678910</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "15px", textDecoration: "none"}}><b>TU Roll No.:</b>&nbsp;12345678910</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "15px", textDecoration: "none"}}><b>Department:</b>&nbsp;12345678910</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "15px", textDecoration: "none"}}><b>Semester:</b>&nbsp;12345678910</p>
         <br />
-        <h2>
-          <b>{name}</b>
-        </h2>
-        <p>({rollNumber})</p>
         <br />
-        {/* <p>{selectedSemester} Semester Diploma in Engineering</p> */}
-        <br />
-        <hr style={{ border: "solid 0.1px black", margin: "50px" }} />
-        <br />
-        <p>COMPUTER SCIENCE & TECHNOLOGY DEPARTMENT</p>
-        <h3>
-          {/* <b>GOMATI DISTRICT POLYTECHNIC</b> */}
-        </h3>
+        <p style={{fontFamily: "Times New Roman",fontSize: "15px", textDecoration: "none"}}><b>Date of Submission - 44/77/88</b></p>
+
+
+
+ 
 
         {/* </div> */}
       </div>
