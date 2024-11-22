@@ -17,7 +17,7 @@
 /* From Uiverse.io by vinodjangid07 */ 
 .Download-button {
     margin-left: 38%;
-    margin-top: -112%;
+    margin-top: -5%;
     height: 130px;
     width: 163px;
     display: flex;
@@ -27,11 +27,11 @@
     font-weight: 500;
     font-size: 17px;
     padding: 12px 20px;
-    /* color: white; */
-    /* color: white; */
-    /* background: rgb(103, 92, 156); */
+    color: white;
+    color: white;
+    background: rgb(103, 92, 156);
     border: none;
-    /* box-shadow: 0 0.7em 1.5em -0.5em rgba(59, 48, 78, 0.527); */
+    box-shadow: 0 0.7em 1.5em -0.5em rgba(59, 48, 78, 0.527);
     letter-spacing: 0.05em;
     border-radius: 8px;
     cursor: pointer;
