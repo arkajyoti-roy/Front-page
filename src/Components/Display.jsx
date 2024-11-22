@@ -9,10 +9,13 @@ const Display = () => {
   const location = useLocation();
   const {
     name,
-    rollNumber,
     selectedBranch,
+    studentID,
     selectedSemester,
+    rollNumber,
+    selectedSubjectCode,
     selectedSubject,
+    session,
   } = location.state;
 
   const pdfRef = useRef();
@@ -139,7 +142,7 @@ const handleDownloadPDF = () => {
         className="details"
         ref={pdfRef}
         style={{
-          marginTop: "-18%",
+          marginTop: "-20%",
           border: "1px solid black",
           width: "210mm",
           height: "297mm",
@@ -150,25 +153,34 @@ const handleDownloadPDF = () => {
         }}
       >
 
-        <h3 style={{ fontSize: "22px", fontWeight: "700" ,fontFamily: "Times New Roman",marginTop:"-20%"}}>
-          Assignment
-        </h3>
-        <h1 style={{ fontSize: "34px", fontWeight: "700" ,fontFamily: "Times New Roman"}}>
+        
+        <h1 style={{ fontSize: "34px", marginTop: "-80px", fontWeight: "700" ,fontFamily: "Times New Roman"}}>
           Techno College of Engineering Agartala
         </h1>
 <br />
-        <span style={{fontFamily: "Times New Roman",fontSize: "18px",}}><b>Course Title:</b></span>
-        <span style={{fontFamily: "Times New Roman",fontSize: "18px",}}>&nbsp;Concrete Technology</span>
-        <br />
-        <span style={{fontFamily: "Times New Roman",fontSize: "18px",}}><b>Course Code:</b></span>
-        <span style={{fontFamily: "Times New Roman",fontSize: "18px",}}>&nbsp;CEP117</span>
-        <br />
+       
         <br />
         <img
           src="./lo.png"
           alt=""
           style={{ width: "260px", alignContent: "center", marginLeft: "32%" }}
         />
+        <br />
+        <br />
+        <br /> 
+        <br />
+        <br />
+        <br />
+        <br />
+        <h3 style={{ fontSize: "22px", fontWeight: "700" ,fontFamily: "Times New Roman",marginTop:"-20%"}}>
+          Assignment
+        </h3>
+        <span style={{fontFamily: "Times New Roman",fontSize: "18px",}}><b>Subject:</b></span>
+        <span style={{fontFamily: "Times New Roman",fontSize: "18px",}}>&nbsp;{selectedSubject}</span>
+        <br />
+        <span style={{fontFamily: "Times New Roman",fontSize: "18px",}}><b>Subject Code:</b></span>
+        <span style={{fontFamily: "Times New Roman",fontSize: "18px",}}>&nbsp;{selectedSubjectCode}</span>
+        <br />
         <br />
         <p style={{fontFamily: "Times New Roman",fontSize: "19px", textDecoration: "underline"}}><b>Submitted to</b></p>
         {/* <br /> */}
@@ -181,11 +193,11 @@ const handleDownloadPDF = () => {
         <br />
         <p style={{fontFamily: "Times New Roman",fontSize: "19px", textDecoration: "underline"}}><b>Submitted by</b></p>
         {/* <br /> */}
-        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>Sexy Sexy</b></p>
-        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>Student ID:</b>&nbsp;12345678910</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>{name}</b></p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>Student ID:</b>&nbsp;{studentID}</p>
         <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>TU Roll No.:</b>&nbsp;12345678910</p>
-        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>Department:</b>&nbsp;12345678910</p>
-        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>Semester:</b>&nbsp;12345678910</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>Department:</b>&nbsp;{selectedBranch}</p>
+        <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>Semester:</b>&nbsp;{selectedSemester}</p>
         <br />
         <br />
         <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "none"}}><b>Date of Submission - 44/77/88</b></p>

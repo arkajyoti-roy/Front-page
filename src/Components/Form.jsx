@@ -14,22 +14,60 @@ const Form = () => {
   const [subjects, setSubjects] = useState([]);
   const navigate = useNavigate();
 
-  const branches = ["COMPUTER SCIENCE & ENGINEERING", "ECE", "ME"];
+  const branches = [
+    "COMPUTER SCIENCE & ENGINEERING",
+    "ECE",
+    "ELECTRICAL ENGINEERING",
+  ];
   const semesters = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"];
 
   const subjectsData = {
     "COMPUTER SCIENCE & ENGINEERING": {
       "3rd": [
-        { name: "Effective Technical Communication", code: "CS301" },
-        { name: "Mathematics-III", code: "CS302" },
-        // Add other subjects as needed
+        { name: "EFFECTIVE TECHNICAL COMMUNICATION", code: "HU 301" },
+        { name: "MATHEMATICS-III", code: "BS 302" },
+        { name: "BIOLOGY FOR ENGINEERS", code: "BS 303" },
+        { name: "ENGINEERING MECHANICS", code: "ES 304" },
+        { name: "DIGITAL LOGIC & MICROPROCESSOR", code: "PC CS 305" },
+        { name: "DATA STRUCTURE & ALGORITHM", code: "PC CS 306" },
+        { name: "JAVA PROGRAMMING LAB", code: "PC CS 307" },
+        { name: "DATA STRUCTURE LAB", code: "PC CS 308" },
+        { name: "DIGITAL ELECTRONICS & MICROPROCESSOR LAB", code: "PC CS 309" },
+        { name: "INDIAN CONSTITUTION", code: "MC 310" },
       ],
       "4th": [
-        { name: "Engineering Economics and Accountancy", code: "CS401" },
-        // Add other subjects as needed
+        { name: "ENGINEERING ECONOMICS AND ACCOUNTANCY", code: "HU 401" },
+        {
+          name: "UNIVERSAL HUMAN VALUES-II: UNDERSTANDING HARMONY",
+          code: "HU 402",
+        },
+        { name: "DISCRETE MATHEMATICS", code: "PC CS 403" },
+        { name: "COMPUTER ORGANIZATION & ARCHITECTURE", code: "PC CS 404" },
+        { name: "OPERATING SYSTEMS", code: "PC CS 405" },
+        { name: "OBJECT ORIENTED PROGRAMMING", code: "PC CS 406" },
+        { name: "IT WORKSHOP (PYTHON)", code: "PC CS 407" },
+        { name: "OPERATING SYSTEM LAB", code: "PC CS 408" },
+        { name: "OBJECT ORIENTED PROGRAMMING LAB", code: "PC CS 409" },
+        { name: "ESSENCE OF INDIAN KNOWLEDGE TRADITION", code: "MC 410" },
+      ],
+      "5th": [
+        { name: "PROFESSIONAL PRACTICE, LAW AND ETHICS", code: "HU 601" },
+        { name: "DESIGN AND ANALYSIS OF ALGORITHM", code: "PC CS 502" },
+        { name: "DATABASE MANAGEMENT SYSTEMS", code: "PC CS 503" },
+        { name: "FORMAL LANGUAGE & AUTOMATA THEORY", code: "PC CS 504" },
+        { name: "ARTIFICIAL INTELLIGENCE", code: "PC CS 505" },
+        { name: "COMPUTER NETWORKS", code: "PC CS 506" },
+        { name: "ALGORITHM LAB", code: "PC CS 507" },
+        { name: "DATABASE MANAGEMENT SYSTEM LAB", code: "PC CS 508" },
+        { name: "COMPUTER HARDWARE & NETWORK LAB", code: "PC CS 509" },
+        { name: "INDUSTRY INTERNSHIP - I", code: "SI CS 510" },
       ],
     },
     ECE: {
+      "1st": [{ name: "Basic Electronics", code: "ECE101" }],
+      "2nd": [{ name: "Analog Circuits", code: "ECE201" }],
+    },
+    "ELECTRICAL ENGINEERING": {
       "1st": [{ name: "Basic Electronics", code: "ECE101" }],
       "2nd": [{ name: "Analog Circuits", code: "ECE201" }],
     },
@@ -75,8 +113,6 @@ const Form = () => {
   };
 
   return (
-
-
     <form action="" className="">
       <div className="bg-white p-10 rounded-lg shadow-lg">
         <div className="flex flex-wrap gap-5 items-center w-full max-md:max-w-full mb-10">
@@ -121,7 +157,7 @@ const Form = () => {
               className="block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border border-violet-200 appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]"
               value={selectedBranch}
               onChange={handleBranchChange}
-            // className="form-select"
+              // className="form-select"
             >
               <option value="">Select Branch</option>
               {branches.map((branch) => (
