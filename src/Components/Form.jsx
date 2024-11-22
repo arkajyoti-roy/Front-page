@@ -70,6 +70,29 @@ const Form = () => {
     "ELECTRICAL ENGINEERING": {
       "1st": [{ name: "Basic Electronics", code: "ECE101" }],
       "2nd": [{ name: "Analog Circuits", code: "ECE201" }],
+      "3rd": [
+        { "name": "EFFECTIVE TECHNICAL COMMUNICATION", "code": "HS 301" },
+        { "name": "MATHEMATICS-III", "code": "BS 302" },
+        { "name": "BIOLOGY FOR ENGINEERS", "code": "BS 303" },
+        { "name": "ENGINEERING MECHANICS", "code": "ES 304" },
+        { "name": "ELECTRICAL CIRCUITS ANALYSIS", "code": "PC EE 305" },
+        { "name": "ANALOG ELECTRONICS", "code": "PC EE 306" },
+        { "name": "ELECTRICAL ESTIMATION & DESIGN PRACTICES", "code": "PC EE 307" },
+        { "name": "ELECTRICAL CIRCUITS LABORATORY", "code": "PC EE 308" },
+        { "name": "ANALOG ELECTRONICS LABORATORY", "code": "PC EE 309" },
+        { "name": "INDIAN CONSTITUTION", "code": "MC 310" }
+      ],
+      "4th": [
+        { "name": "ENGINEERING ECONOMICS AND ACCOUNTANCY", "code": "HS 401" },
+        { "name": "UNIVERSAL HUMAN VALUES-II: UNDERSTANDING HARMONY", "code": "HS 402" },
+        { "name": "ELECTROMAGNETIC FIELDS THEORY", "code": "PC EE 403" },
+        { "name": "ELECTRICAL MACHINES-I", "code": "PC EE 404" },
+        { "name": "DIGITAL ELECTRONICS", "code": "PC EE 405" },
+        { "name": "POWER ELECTRONICS", "code": "PC EE 406" },
+        { "name": "ELECTRICAL MACHINES", "code": "PC EE" }
+      ],
+      
+      
     },
   };
 
