@@ -19,22 +19,22 @@ const Display = () => {
   // const zoomLevel = 0.4;
   // const zoomLevel = 0.55;
 
-  const [zoomLevel, setZoomLevel] = useState(1);
+  // const [zoomLevel, setZoomLevel] = useState(1);
 
-  useEffect(() => {
-    const checkDeviceType = () => {
-      if (window.innerWidth <= 768) {
-        setZoomLevel(0.4);
-      } else {
-        setZoomLevel(0.55);
-      }
-    };
+  // useEffect(() => {
+  //   const checkDeviceType = () => {
+  //     if (window.innerWidth <= 768) {
+  //       setZoomLevel(0.4);
+  //     } else {
+  //       setZoomLevel(0.55);
+  //     }
+  //   };
 
-    window.addEventListener("resize", checkDeviceType);
-    checkDeviceType();
+  //   window.addEventListener("resize", checkDeviceType);
+  //   checkDeviceType();
 
-    return () => window.removeEventListener("resize", checkDeviceType);
-  }, []);
+  //   return () => window.removeEventListener("resize", checkDeviceType);
+  // }, []);
 
   // const handleDownloadPDF = () => {
   //   const input = pdfRef.current;
@@ -91,7 +91,7 @@ const handleDownloadPDF = () => {
     allowTaint: true,
     useCORS: true,
     logging: true,
-    scale: 3 // Ensure high-quality rendering
+    scale: 6 // Ensure high-quality rendering
   }).then((canvas) => {
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');
@@ -113,13 +113,13 @@ const handleDownloadPDF = () => {
 
   return (
     <div
-      style={{
-        transform: `scale(${zoomLevel})`,
-        transformOrigin: "0 1",
-        // width: `${100 / zoomLevel}%`,
-        // height: `${100 / zoomLevel}%`,
-        overflow: "hidden",
-      }}
+      // style={{
+      //   transform: `scale(${zoomLevel})`,
+      //   transformOrigin: "0 1",
+      //   // width: `${100 / zoomLevel}%`,
+      //   // height: `${100 / zoomLevel}%`,
+      //   overflow: "hidden",
+      // }}
     >
       {/* <div className='pdff'> */}
       <div
