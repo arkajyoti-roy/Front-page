@@ -17,8 +17,9 @@
 /* From Uiverse.io by vinodjangid07 */ 
 .Download-button {
     margin-left: 38%;
+    margin-top: -112%;
     height: 130px;
-    width: 500px;
+    width: 163px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,17 +27,18 @@
     font-weight: 500;
     font-size: 17px;
     padding: 12px 20px;
-    color: white;
-    background: rgb(103, 92, 156);
+    /* color: white; */
+    /* color: white; */
+    /* background: rgb(103, 92, 156); */
     border: none;
-    box-shadow: 0 0.7em 1.5em -0.5em rgba(59, 48, 78, 0.527);
+    /* box-shadow: 0 0.7em 1.5em -0.5em rgba(59, 48, 78, 0.527); */
     letter-spacing: 0.05em;
     border-radius: 8px;
     cursor: pointer;
     position: relative;
   }
   
-  .Download-button svg {
+  /* .Download-button svg {
     margin-right: 8px;
     width: 25px;
   }
@@ -47,9 +49,9 @@
   
   .Download-button:active {
     box-shadow: 0 0.3em 1em -0.5em rgba(88, 71, 116, 0.627);
-  }
+  } */
   
-  .Download-button::before {
+  /* .Download-button::before {
     content: "";
     width: 4px;
     height: 40%;
@@ -76,15 +78,31 @@
   .Download-button:hover::before,
   .Download-button:hover::after {
     height: 60%;
-  }
+  } */
   
 
 @media (min-width: 300px) and (max-width: 768px) {
 
-.details{
+/* .details{
     margin-left: 30%;
-    /* margin-left: 27.4%; */
+} */
+
+.details {
+  margin-top: -18%;
+  border: 1px solid black;
+  width: 210mm;
+  height: 297mm;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  line-height: 1.8; /* Increased line-height for better spacing */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
+
+
+
 }
 .formimg {
   margin-left: -6px;
