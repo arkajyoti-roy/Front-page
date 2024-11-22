@@ -91,7 +91,7 @@ const handleDownloadPDF = () => {
     allowTaint: true,
     useCORS: true,
     logging: true,
-    scale: 6 // Ensure high-quality rendering
+    scale: 4 // Ensure high-quality rendering
   }).then((canvas) => {
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');
@@ -126,7 +126,7 @@ const handleDownloadPDF = () => {
         className="details"
         ref={pdfRef}
         style={{
-          marginTop: "4%",
+          marginTop: "-18%",
           border: "1px solid black",
           width: "210mm",
           height: "297mm",
@@ -137,7 +137,7 @@ const handleDownloadPDF = () => {
         }}
       >
 
-        <h3 style={{ fontSize: "22px", fontWeight: "700" ,fontFamily: "Times New Roman"}}>
+        <h3 style={{ fontSize: "22px", fontWeight: "700" ,fontFamily: "Times New Roman",marginTop:"-20%"}}>
           Assignment
         </h3>
         <h1 style={{ fontSize: "30px", fontWeight: "700" ,fontFamily: "Times New Roman"}}>
@@ -154,7 +154,7 @@ const handleDownloadPDF = () => {
         <img
           src="./lo.png"
           alt=""
-          style={{ width: "200px", alignContent: "center", marginLeft: "36%" }}
+          style={{ width: "260px", alignContent: "center", marginLeft: "32%" }}
         />
         <br />
         <p style={{fontFamily: "Times New Roman",fontSize: "17px", textDecoration: "underline"}}><b>Submitted to</b></p>
