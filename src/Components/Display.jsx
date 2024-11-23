@@ -146,7 +146,7 @@ const Display = () => {
         <br />
         <br />
         <p style={{ fontFamily: "Times New Roman", fontSize: "17px", textDecoration: "none" }}>
-          <b>Date of Submission - 44/77/88</b>
+          <b style={{display: "none"}}>Date of Submission - 44/77/88</b>
         </p>
       </div>
       <br />
