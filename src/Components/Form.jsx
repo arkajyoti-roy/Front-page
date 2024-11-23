@@ -4,6 +4,7 @@ import "./style.css";
 
 const Form = () => {
   const [name, setName] = useState("");
+  const [facultyName, setFacultyName] = useState("");
   const [studentID, setStudentID] = useState("");
   const [selectedSubjectCode, setSelectedSubjectCode] = useState("");
   const [session, setSession] = useState("");
@@ -13,12 +14,42 @@ const Form = () => {
   const [selectedSubject, setSelectedSubject] = useState("");
   const [subjects, setSubjects] = useState([]);
   const navigate = useNavigate();
+  const [designation, setDesignation] = useState("");
+  const [department, setDepartment] = useState("");
+  const [assignment, setAssignment] = useState(true); // Checked by default
 
   const branches = [
     "COMPUTER SCIENCE & ENGINEERING",
     "ECE",
     "ELECTRICAL ENGINEERING",
   ];
+
+  const designations = [ "Assistant Professor", "Associate Professor", "Lecturer", "Guest Lecturer", ];
+
+  const departments = [
+    "Basic Science & Humanities",
+
+    "Civil Engineering",
+    "Mechanical Engineering",
+    "Electrical Engineering",
+    "Electronics & Communication Engineering",
+    "Computer Science & Engineering",
+    // "Advanced Mechatronics & Industrial Automation",
+    // "Civil Engineering with Computer Application",
+    // "Electrical & Computer Engineering",
+    // "Artificial Intelligence & Data Science",
+  ];
+
+  const handleDesignationChange = (event) => {
+    setDesignation(event.target.value);
+  };
+  const handleDepatmentChange = (event) => {
+    setDepartment(event.target.value);
+  };
+  const handleAssignmentChange = () => {
+    setAssignment(!assignment);
+  };
+
   const semesters = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"];
 
   const subjectsData = {
@@ -71,28 +102,29 @@ const Form = () => {
       "1st": [{ name: "Basic Electronics", code: "ECE101" }],
       "2nd": [{ name: "Analog Circuits", code: "ECE201" }],
       "3rd": [
-        { "name": "EFFECTIVE TECHNICAL COMMUNICATION", "code": "HS 301" },
-        { "name": "MATHEMATICS-III", "code": "BS 302" },
-        { "name": "BIOLOGY FOR ENGINEERS", "code": "BS 303" },
-        { "name": "ENGINEERING MECHANICS", "code": "ES 304" },
-        { "name": "ELECTRICAL CIRCUITS ANALYSIS", "code": "PC EE 305" },
-        { "name": "ANALOG ELECTRONICS", "code": "PC EE 306" },
-        { "name": "ELECTRICAL ESTIMATION & DESIGN PRACTICES", "code": "PC EE 307" },
-        { "name": "ELECTRICAL CIRCUITS LABORATORY", "code": "PC EE 308" },
-        { "name": "ANALOG ELECTRONICS LABORATORY", "code": "PC EE 309" },
-        { "name": "INDIAN CONSTITUTION", "code": "MC 310" }
+        { name: "EFFECTIVE TECHNICAL COMMUNICATION", code: "HS 301" },
+        { name: "MATHEMATICS-III", code: "BS 302" },
+        { name: "BIOLOGY FOR ENGINEERS", code: "BS 303" },
+        { name: "ENGINEERING MECHANICS", code: "ES 304" },
+        { name: "ELECTRICAL CIRCUITS ANALYSIS", code: "PC EE 305" },
+        { name: "ANALOG ELECTRONICS", code: "PC EE 306" },
+        { name: "ELECTRICAL ESTIMATION & DESIGN PRACTICES", code: "PC EE 307" },
+        { name: "ELECTRICAL CIRCUITS LABORATORY", code: "PC EE 308" },
+        { name: "ANALOG ELECTRONICS LABORATORY", code: "PC EE 309" },
+        { name: "INDIAN CONSTITUTION", code: "MC 310" },
       ],
       "4th": [
-        { "name": "ENGINEERING ECONOMICS AND ACCOUNTANCY", "code": "HS 401" },
-        { "name": "UNIVERSAL HUMAN VALUES-II: UNDERSTANDING HARMONY", "code": "HS 402" },
-        { "name": "ELECTROMAGNETIC FIELDS THEORY", "code": "PC EE 403" },
-        { "name": "ELECTRICAL MACHINES-I", "code": "PC EE 404" },
-        { "name": "DIGITAL ELECTRONICS", "code": "PC EE 405" },
-        { "name": "POWER ELECTRONICS", "code": "PC EE 406" },
-        { "name": "ELECTRICAL MACHINES", "code": "PC EE" }
+        { name: "ENGINEERING ECONOMICS AND ACCOUNTANCY", code: "HS 401" },
+        {
+          name: "UNIVERSAL HUMAN VALUES-II: UNDERSTANDING HARMONY",
+          code: "HS 402",
+        },
+        { name: "ELECTROMAGNETIC FIELDS THEORY", code: "PC EE 403" },
+        { name: "ELECTRICAL MACHINES-I", code: "PC EE 404" },
+        { name: "DIGITAL ELECTRONICS", code: "PC EE 405" },
+        { name: "POWER ELECTRONICS", code: "PC EE 406" },
+        { name: "ELECTRICAL MACHINES", code: "PC EE" },
       ],
-      
-      
     },
   };
 
@@ -131,6 +163,10 @@ const Form = () => {
         selectedSubjectCode,
         selectedSubject,
         session,
+        facultyName,
+        designation,
+        assignment,
+        department,
       },
     });
   };
@@ -310,6 +346,84 @@ const Form = () => {
               Subject Code
             </label>
           </div>
+
+          <div id="input" className="relative">
+            <input
+              type="text"
+              id="floating_outlined"
+              className="block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border border-violet-200 appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]"
+              placeholder="Faculty Name"
+              value={facultyName}
+              onChange={(e) => setFacultyName(e.target.value)}
+            />
+
+            <label
+              htmlFor="floating_outlined"
+              className="peer-placeholder-shown:-z-10 peer-focus:z-10 absolute text-[14px] leading-[150%] text-primary peer-focus:text-primary peer-invalid:text-error-500 focus:invalid:text-error-500 duration-300 transform -translate-y-[1.2rem] scale-75 top-2 z-10 origin-[0] bg-white disabled:bg-gray-50-background- px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-[1.2rem] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+            >
+              Faculty Name
+            </label>
+          </div>
+
+          <div id="input" className="relative">
+            <select
+              value={designation}
+              onChange={handleDesignationChange}
+              className="block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border border-violet-200 appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]"
+            >
+              {" "}
+              <option value="">Select Designation</option>
+
+              {designations.map((desig) => (
+                <option key={desig} value={desig}>
+                  {" "}
+                  {desig}{" "}
+                </option>
+              ))}{" "}
+            </select>
+
+            <label
+              htmlFor="floating_outlined"
+              className="peer-placeholder-shown:-z-10 peer-focus:z-10 absolute text-[14px] leading-[150%] text-primary peer-focus:text-primary peer-invalid:text-error-500 focus:invalid:text-error-500 duration-300 transform -translate-y-[1.2rem] scale-75 top-2 z-10 origin-[0] bg-white disabled:bg-gray-50-background- px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-[1.2rem] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+            >
+              Designation
+            </label>
+          </div>
+
+          <div id="input" className="relative">
+            <select
+              value={department}
+              onChange={handleDepatmentChange}
+              className="block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border border-violet-200 appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]"
+            >
+              {" "}
+              <option value="">Select Department</option>
+              {departments.map((dept) => (
+                <option key={dept} value={dept}>
+                  {" "}
+                  {dept}{" "}
+                </option>
+              ))}{" "}
+            </select>
+
+            <label
+              htmlFor="floating_outlined"
+              className="peer-placeholder-shown:-z-10 peer-focus:z-10 absolute text-[14px] leading-[150%] text-primary peer-focus:text-primary peer-invalid:text-error-500 focus:invalid:text-error-500 duration-300 transform -translate-y-[1.2rem] scale-75 top-2 z-10 origin-[0] bg-white disabled:bg-gray-50-background- px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-[1.2rem] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+            >
+              Department
+            </label>
+          </div>
+
+          <label>
+            {" "}
+            Assignment:{" "}
+            <input
+            value={"Assignment"}
+              type="checkbox"
+              checked={assignment}
+              onChange={handleAssignmentChange}
+            />{" "}
+          </label>
         </div>
 
         <div className="sm:flex sm:flex-row-reverse flex gap-4">
